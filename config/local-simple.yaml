@@ -111,7 +111,7 @@ modules:
               role: bap
       steps:
         - addRoute
-        - sign
+        # - sign
   
   - name: bppTxnReceiver
     path: /bpp/receiver/
@@ -197,4 +197,4 @@ modules:
           id: signer
       steps:
         - addRoute
-        - sign
+        # - sign
