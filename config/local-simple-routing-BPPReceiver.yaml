@@ -1,6 +1,6 @@
 routingRules:
-  - domain: "${RETAIL_DOMAIN}"
-    version: "${RETAIL_DOMAIN_VERSION}"
+  - domain: "*"
+    version: "2.0.0"
     targetType: "url"
     target:
       url: "http://sandbox-2.0:3000/api/webhook"

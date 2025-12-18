@@ -1,6 +1,6 @@
 routingRules:
-  - domain: "${RETAIL_DOMAIN}"
-    version: "${RETAIL_DOMAIN_VERSION}"
+  - domain: "*"
+    version: "2.0.0"
     targetType: "url"
     target:
       url: "http://bap-sandbox-app-1:3002/webhook"

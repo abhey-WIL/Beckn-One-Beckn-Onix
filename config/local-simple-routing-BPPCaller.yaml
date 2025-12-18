@@ -1,6 +1,6 @@
 routingRules:
-  - domain: "${RETAIL_DOMAIN}"
-    version: "${RETAIL_DOMAIN_VERSION}"
+  - domain: "*"
+    version: "2.0.0"
     targetType: "url"
     target:
       url: "http://onix-adapter:8081/bap/receiver"
