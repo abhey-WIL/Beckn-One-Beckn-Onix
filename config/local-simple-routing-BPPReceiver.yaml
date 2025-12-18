@@ -1,10 +1,12 @@
 routingRules:
-  - domain: "retail:1.1.0"  # Retail domain
-    version: "1.1.0"
+  - domain: "${RETAIL_DOMAIN}"
+    version: "${RETAIL_DOMAIN_VERSION}"
     targetType: "url"
     target:
-      url: "http://sandbox-api:3000/retail/1.1.0"
+      url: "http://sandbox-2.0:3000/api/webhook"
     endpoints:
+      - search
+      - discover
       - select
       - init
       - confirm
@@ -14,11 +16,3 @@ routingRules:
       - update
       - rating
       - support
-
-  - domain: "retail:1.1.0"  # Retail domain
-    version: "1.1.0"
-    targetType: "url"
-    target:
-      url: "http://gateway:4000/"
-    endpoints:
-      - search

@@ -147,5 +147,4 @@ server
 beckn-adapter
 *.log
 .env
-.env.*
 test_request.json

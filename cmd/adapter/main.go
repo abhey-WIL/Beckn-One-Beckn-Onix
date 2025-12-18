@@ -59,16 +59,18 @@ func main() {
 
 // initConfig loads and validates the configuration.
 func initConfig(ctx context.Context, path string) (*Config, error) {
-	// Open the configuration file.
-	file, err := os.Open(path)
+	// Read the configuration file.
+	yamlFile, err := os.ReadFile(path)
 	if err != nil {
-		return nil, fmt.Errorf("could not open config file: %w", err)
+		return nil, fmt.Errorf("could not read config file: %w", err)
 	}
-	defer file.Close()
+
+	// Expand environment variables
+	expandedYaml := os.ExpandEnv(string(yamlFile))
 
 	// Decode the YAML configuration.
 	var cfg Config
-	if err := yaml.NewDecoder(file).Decode(&cfg); err != nil {
+	if err := yaml.Unmarshal([]byte(expandedYaml), &cfg); err != nil {
 		return nil, fmt.Errorf("could not decode config: %w", err)
 	}
 	log.Debugf(ctx, "Read config: %#v", cfg)

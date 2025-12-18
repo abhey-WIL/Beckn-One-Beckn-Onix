@@ -39,11 +39,11 @@ modules:
           id: simplekeymanager
           config:
             networkParticipant: bap-network
-            keyId: bap-network-key
-            signingPrivateKey: uc5WYG/eke0PVGyQ9JNVLpwQL0K9JIZfHfqUHdLBTaY=
-            signingPublicKey: UX1EDpL4YHOnfkuhrtS+Bz18qwidrX+oJxButD8xaCE=
-            encrPrivateKey: uc5WYG/eke0PVGyQ9JNVLpwQL0K9JIZfHfqUHdLBTaY=
-            encrPublicKey: UX1EDpL4YHOnfkuhrtS+Bz18qwidrX+oJxButD8xaCE=
+            keyId: 76EU7PktCXdPoNEZBjmg4Eb25A2egsd5MYJ67Qxza7bJQFvBHCYxgk
+            signingPrivateKey: 9NBh67Pk/6v3irrkYZHlQ5E1qw+GivHdDFtKeCylzIM=
+            signingPublicKey: Z3Hnc8FZDo/7dwWApeRVs6OV560gr7uxPsFUDGUMsBg=
+            encrPrivateKey: 9NBh67Pk/6v3irrkYZHlQ5E1qw+GivHdDFtKeCylzIM=
+            encrPublicKey: Z3Hnc8FZDo/7dwWApeRVs6OV560gr7uxPsFUDGUMsBg=
         cache:
           id: cache
           config:
@@ -57,14 +57,14 @@ modules:
         router:
           id: router
           config:
-            routingConfig: ./config/local-simple-routing.yaml
+            routingConfig: ./config/local-simple-routing-BAPReceiver.yaml
         middleware:
           - id: reqpreprocessor
             config:
               uuidKeys: transaction_id,message_id
               role: bap
       steps:
-        - validateSign
+        # - validateSign
         - addRoute
   
   - name: bapTxnCaller
@@ -89,11 +89,11 @@ modules:
           id: simplekeymanager
           config:
             networkParticipant: bap-network
-            keyId: bap-network-key
-            signingPrivateKey: uc5WYG/eke0PVGyQ9JNVLpwQL0K9JIZfHfqUHdLBTaY=
-            signingPublicKey: UX1EDpL4YHOnfkuhrtS+Bz18qwidrX+oJxButD8xaCE=
-            encrPrivateKey: uc5WYG/eke0PVGyQ9JNVLpwQL0K9JIZfHfqUHdLBTaY=
-            encrPublicKey: UX1EDpL4YHOnfkuhrtS+Bz18qwidrX+oJxButD8xaCE=
+            keyId: 76EU7PktCXdPoNEZBjmg4Eb25A2egsd5MYJ67Qxza7bJQFvBHCYxgk
+            signingPrivateKey: 9NBh67Pk/6v3irrkYZHlQ5E1qw+GivHdDFtKeCylzIM=
+            signingPublicKey: Z3Hnc8FZDo/7dwWApeRVs6OV560gr7uxPsFUDGUMsBg=
+            encrPrivateKey: 9NBh67Pk/6v3irrkYZHlQ5E1qw+GivHdDFtKeCylzIM=
+            encrPublicKey: Z3Hnc8FZDo/7dwWApeRVs6OV560gr7uxPsFUDGUMsBg=
         cache:
           id: cache
           config:
@@ -135,11 +135,11 @@ modules:
           id: simplekeymanager
           config:
             networkParticipant: bpp-network
-            keyId: bpp-network-key
-            signingPrivateKey: uc5WYG/eke0PVGyQ9JNVLpwQL0K9JIZfHfqUHdLBTaY=
-            signingPublicKey: 8CANv4rto7u6RZEB9b6z6mXIIfBLlExIRLBLd5YYl/Y=
-            encrPrivateKey: uc5WYG/eke0PVGyQ9JNVLpwQL0K9JIZfHfqUHdLBTaY=
-            encrPublicKey: 8CANv4rto7u6RZEB9b6z6mXIIfBLlExIRLBLd5YYl/Y=
+            keyId: 76EU97uf1o6aPhkutTVwQxPW5ACvWCB4Mc1RBnUdLLxyQwDYmQk2bV
+            signingPrivateKey: bTBQ++fLfL9HHXQom2rNgmfCKMfbfV+NeJKNPveV57U=
+            signingPublicKey: azH1aCG8NNC2Otrx2kjUZ8ATw2EZCDCzela9Y+BXBhk=
+            encrPrivateKey: bTBQ++fLfL9HHXQom2rNgmfCKMfbfV+NeJKNPveV57U=
+            encrPublicKey: azH1aCG8NNC2Otrx2kjUZ8ATw2EZCDCzela9Y+BXBhk=
         cache:
           id: cache
           config:
@@ -155,7 +155,7 @@ modules:
           config:
             routingConfig: ./config/local-simple-routing-BPPReceiver.yaml
       steps:
-        - validateSign
+        # - validateSign
         - addRoute
   
   - name: bppTxnCaller
@@ -180,11 +180,11 @@ modules:
           id: simplekeymanager
           config:
             networkParticipant: bpp-network
-            keyId: bpp-network-key
-            signingPrivateKey: uc5WYG/eke0PVGyQ9JNVLpwQL0K9JIZfHfqUHdLBTaY=
-            signingPublicKey: 8CANv4rto7u6RZEB9b6z6mXIIfBLlExIRLBLd5YYl/Y=
-            encrPrivateKey: uc5WYG/eke0PVGyQ9JNVLpwQL0K9JIZfHfqUHdLBTaY=
-            encrPublicKey: 8CANv4rto7u6RZEB9b6z6mXIIfBLlExIRLBLd5YYl/Y=
+            keyId: 76EU97uf1o6aPhkutTVwQxPW5ACvWCB4Mc1RBnUdLLxyQwDYmQk2bV
+            signingPrivateKey: bTBQ++fLfL9HHXQom2rNgmfCKMfbfV+NeJKNPveV57U=
+            signingPublicKey: azH1aCG8NNC2Otrx2kjUZ8ATw2EZCDCzela9Y+BXBhk=
+            encrPrivateKey: bTBQ++fLfL9HHXQom2rNgmfCKMfbfV+NeJKNPveV57U=
+            encrPublicKey: azH1aCG8NNC2Otrx2kjUZ8ATw2EZCDCzela9Y+BXBhk=
         cache:
           id: cache
           config:
@@ -192,7 +192,7 @@ modules:
         router:
           id: router
           config:
-            routingConfig: ./config/local-simple-routing.yaml
+            routingConfig: ./config/local-simple-routing-BPPCaller.yaml
         signer:
           id: signer
       steps:

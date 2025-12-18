@@ -1,0 +1,18 @@
+routingRules:
+  - domain: "${RETAIL_DOMAIN}"
+    version: "${RETAIL_DOMAIN_VERSION}"
+    targetType: "url"
+    target:
+      url: "http://bap-sandbox-app-1:3002/webhook"
+    endpoints:
+      - on_select
+      - on_init
+      - on_confirm
+      - on_status
+      - on_track
+      - on_cancel
+      - on_update
+      - on_rating
+      - on_support
+      - on_discover
+      - on_search

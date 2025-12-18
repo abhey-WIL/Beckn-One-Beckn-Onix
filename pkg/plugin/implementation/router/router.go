@@ -77,12 +77,18 @@ func (r *Router) loadRules(configPath string) error {
 	if configPath == "" {
 		return fmt.Errorf("routingConfig path is empty")
 	}
-	data, err := os.ReadFile(configPath)
+	
+	// Read the configuration file.
+	yamlFile, err := os.ReadFile(configPath)
 	if err != nil {
 		return fmt.Errorf("error reading config file at %s: %w", configPath, err)
 	}
+
+	// Expand environment variables
+	expandedYaml := os.ExpandEnv(string(yamlFile))
+
 	var config routingConfig
-	if err := yaml.Unmarshal(data, &config); err != nil {
+	if err := yaml.Unmarshal([]byte(expandedYaml), &config); err != nil {
 		return fmt.Errorf("error parsing YAML: %w", err)
 	}
 

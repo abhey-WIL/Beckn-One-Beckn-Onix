@@ -1,8 +1,12 @@
 routingRules:
-  - domain: "retail:1.1.0"  # Retail domain
-    version: "1.1.0"
-    targetType: "bpp"
+  - domain: "${RETAIL_DOMAIN}"
+    version: "${RETAIL_DOMAIN_VERSION}"
+    targetType: "url"
+    target:
+      url: "http://onix-adapter:8081/bpp/receiver"
     endpoints:
+      - discover
+      - search
       - select
       - init
       - confirm
@@ -12,19 +16,3 @@ routingRules:
       - update
       - rating
       - support
-
-  - domain: "retail:1.1.0"  # Retail domain
-    version: "1.1.0"
-    targetType: "url"
-    target:
-      url: "http://gateway:4030/bg"
-    endpoints:
-      - search
-
-  - domain: "retail:1.1.0"  # Retail domain
-    version: "1.1.0"
-    targetType: "url"
-    target:
-      url: "https://34.93.141.21.sslip.io/beckn"
-    endpoints:
-      - discover
